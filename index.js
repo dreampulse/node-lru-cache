@@ -80,11 +80,7 @@ const deprecatedProperty = (field, instead) => {
 }
 
 const emitWarning = (...a) => {
-  typeof process === 'object' &&
-  process &&
-  typeof process.emitWarning === 'function'
-    ? process.emitWarning(...a)
-    : console.error(...a)
+  console.error(...a)
 }
 
 const shouldWarn = code => !warned.has(code)
